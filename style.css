@@ -1,16 +1,40 @@
-body {
-    background-image: url('./img/pexels-luis-dalvan-1770809.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
+
+.bg-overlay {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(51, 112, 39, 0.5);
+    background-blend-mode: multiply;
+    height: 100vh;
+  }
+  
+  .bg-overlay:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+  }
+  
+  .bg-overlay > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
   }
   form {
-    background-color: #ffffff;
+    background-color: #fd3b3b;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    opacity: .9;
   }
-  
+ 
   input[type="text"],
   input[type="email"],
   input[type="tel"],
@@ -21,8 +45,16 @@ body {
     padding: 10px;
     margin-bottom: 10px;
     width: 100%;
+    transition: box-shadow 0.3s ease;
   }
   
+  input[type="text"]:hover,
+  input[type="email"]:hover,
+  input[type="tel"]:hover,
+  textarea:hover {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  }
+
   input[type="submit"] {
     background-color: #4CAF50;
     color: white;
@@ -36,4 +68,52 @@ body {
   input[type="submit"]:hover {
     background-color: #3e8e41;
   }
+   label {
+    font-weight: bold;
+  }
   
+  h2 {
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  ::-webkit-input-placeholder {
+    color: #999;
+  }
+  
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: #999;
+  }
+  
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #999;
+  }
+  
+  :-ms-input-placeholder {
+    color: #999;
+  }  
+
+
+
+   /* Define a class to add the animation to */
+   .form-animation:hover {
+    animation: formMove 5s ease-in-out infinite;
+  }
+
+  /* Define the animation keyframes */
+  @keyframes formMove {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+ 
