@@ -1,11 +1,23 @@
-.form-group {
+form {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px;
   }
 
   .form-group label,
   .form-group input {
     flex-basis: 48%;
+  }
+
+  .submit-btn {
+    margin-top: 20px;
   }
